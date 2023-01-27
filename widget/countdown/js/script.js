@@ -1,7 +1,7 @@
 var currentTimer;
 var remainingSeconds;
 var timer;
-var timerDoneText = "<h1>Countdown is done!</h1>"
+var timerDoneText = "";//<h1>Countdown is done!</h1>"
 var desc;
 
 window.addEventListener('load', (event) => {
@@ -72,8 +72,11 @@ function bindEvents() {
             case "StopTimer":
                 stopTimer();
                 break;
+            case "ResumeTimer":
+                startTimer();
+                break;
             default:
-                console.log(data.event.type);
+                console.log(wsdata.data.event.type);
 
         }
     };
